@@ -3,11 +3,11 @@ import './App.css';
 import Home from './component/home';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    // <div className="App">
+    //   <header className="App-header">
         <Home/>
-      </header>
-    </div>
+    //   </header>
+    // </div>
   );
 }
 
