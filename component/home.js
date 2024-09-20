@@ -1,0 +1,1 @@
+// this page is for displaying rendering all the component
