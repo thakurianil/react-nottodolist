@@ -1,6 +1,8 @@
 // This page is for displaying goodlist
 import React from 'react';
-function DisplayGoodLIst(params) {
+function DisplayGoodLIst(formData) {
+    let goodlist = formData.formData;
+    
     return(
 
         <>
