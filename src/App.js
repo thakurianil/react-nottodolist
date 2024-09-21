@@ -1,13 +1,12 @@
-
+import React from 'react';
 import './App.css';
 import Home from './component/home';
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
+    <div class="wrapper">
         <Home/>
-    //   </header>
-    // </div>
+    </div>
+
   );
 }
 

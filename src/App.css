@@ -32,7 +32,28 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.table {
+  --bs-table-bg: transparent;
+
+}
+
+h3 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.text-end {
+  display: flex;
+  justify-content: space-evenly;
 }
