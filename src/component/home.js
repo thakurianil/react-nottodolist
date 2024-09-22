@@ -12,16 +12,7 @@ function Home() {
     type:"good"
   });
   const [savedTasks, setSavedTasks] = useState([]);
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
   const handleFormSubmit = (data) => {
-    console.log(data);
     
     if (formData.task && formData.hours) {
       setSavedTasks([...savedTasks, formData]); // Save data
@@ -47,7 +38,7 @@ function Home() {
       </div>
       <div class="container mt-4">
         <div class="row p-1 ">
-          <DisplayGoodLIst formData={formData}/>
+          <DisplayGoodLIst />
           <DisplayBadLIst />
         </div>
       </div>

@@ -2,20 +2,8 @@ import React, { useState } from 'react';
 import "../App.css";
 
 function Form({ handleFormSubmit, formData }) {
-  const [localFormData, setLocalFormData] = useState(formData);
+ let onHandleSubmit = handleFormSubmit;
 
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-    handleFormSubmit(localFormData); // Pass the local form data to the parent (App.js)
-  };
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setLocalFormData({
-      ...localFormData,
-      [name]: value,
-    });
-  };
 
   return (
     <div className="Form">
@@ -29,8 +17,8 @@ function Form({ handleFormSubmit, formData }) {
                 id="Task"
                 placeholder="Task"
                 name="task"
-                value={localFormData.task}
-                onChange={onChange}
+                value={formData.task}
+
               />
             </div>
           </div>
@@ -42,8 +30,8 @@ function Form({ handleFormSubmit, formData }) {
                 id="hours"
                 placeholder="Hours"
                 name="hours"
-                value={localFormData.hours}
-                onChange={onChange}
+                value={formData.hours}
+                
               />
             </div>
           </div>
