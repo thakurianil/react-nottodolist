@@ -1,4 +1,3 @@
-// This page is for displaying badlist
 import React from "react";
 import "../App.css";
 function DisplayBadLIst({ badList, onChangeType, onDeleteType }) {
@@ -15,7 +14,7 @@ function DisplayBadLIst({ badList, onChangeType, onDeleteType }) {
             <input
               type="checkbox"
             //   onChange={(e) => {
-            //     /* handle select all logic for bad list */
+
             //   }}
               value="bad"
               id="badCheckBox"
