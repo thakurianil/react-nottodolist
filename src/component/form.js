@@ -23,7 +23,7 @@ function Form() {
     id: "",
   });
 
-  const [submittedData, setSubmittedData] = useState([]); // Store multiple submitted data objects
+  const [submittedData, setSubmittedData] = useState([]); 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -72,8 +72,6 @@ function Form() {
   };
 
   const deleteTask = (index) => {
-    console.log(index);
-    console.log(setSubmittedData);
     setSubmittedData((prevList) => prevList.filter((item) => item.id !== index));
   };
 
@@ -111,7 +109,7 @@ function Form() {
                       placeholder="Hours"
                       name="hours"
                       value={formData.hours}
-                      onChange={handleInputChange} // Update state on change
+                      onChange={handleInputChange} 
                     />
                   </div>
                 </div>

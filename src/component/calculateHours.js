@@ -2,10 +2,10 @@ import React from 'react';
 
 function CalculateHours(props) {
   return (
-    <div class="container">
-      <div class="row">
+    <div className="container">
+      <div className="row">
         <div
-          class="alert alert-success text-center"
+          className="alert alert-success text-center"
           role="alert"
           id="allocated"
         >
