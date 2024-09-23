@@ -1,33 +1,15 @@
 // This page is for displaying goodlist
 import React from "react";
 function DisplayGoodLIst({ goodList, onChangeType, onDeleteType, onSelected }) {
-  return (
+  
+  
+    return (
     <>
       <div className="col-md-6 p-3 text-center">
         <h3>
-          <span>
-            <input
-              type="checkbox"
-              //   onChange={(e) => {/* handle select all logic */}}
-              value="entry"
-              id="checkBox"
-            />
-          </span>
+
           Entry List
-          <button
-            type="button"
-            className="btn btn-danger"
-            // onClick={deleteSelected}
-          >
-            <i className="fa-solid fa-trash"></i>
-          </button>
-          <button
-            type="button"
-            className="btn btn-success"
-            // onClick={swapSelected}
-          >
-            <i className="fa-solid fa-arrow-right"></i>
-          </button>
+          
         </h3>
 
         <hr />
@@ -36,14 +18,7 @@ function DisplayGoodLIst({ goodList, onChangeType, onDeleteType, onSelected }) {
             {goodList.map((value, index) => (
               <tr key={index}>
                 <th scope="row">{value.id}</th>
-                <td>
-                  <input
-                    type="checkbox"
-                    onChange={(e) => {onSelected()}}
-                    value="entry"
-                    id="checkBox"
-                  />
-                </td>
+                
 
                 <td>{value.task}</td>
                 <td>{value.hours}</td>

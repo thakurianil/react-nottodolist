@@ -10,31 +10,9 @@ function DisplayBadLIst({ badList, onChangeType, onDeleteType }) {
     <>
       <div className="col-md-6 p-3 text-center">
         <h3>
-          <span>
-            <input
-              type="checkbox"
-            //   onChange={(e) => {
 
-            //   }}
-              value="bad"
-              id="badCheckBox"
-            />
-          </span>
           Bad List
-          <button
-            type="button"
-            className="btn btn-danger"
-            // onClick={deleteSelectedBad}
-          >
-            <i className="fa-solid fa-trash"></i>
-          </button>
-          <button
-            type="button"
-            className="btn btn-success"
-            // onClick={swapSelectedBad}
-          >
-            <i className="fa-solid fa-arrow-left"></i>
-          </button>
+        
         </h3>
 
         <hr />

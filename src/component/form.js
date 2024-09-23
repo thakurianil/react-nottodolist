@@ -21,9 +21,10 @@ function Form() {
     hours: "",
     type: "good",
     id: "",
+    isChecked: false,
   });
 
-  const [submittedData, setSubmittedData] = useState([]); 
+  const [submittedData, setSubmittedData] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,10 +33,13 @@ function Form() {
       [name]: value,
     });
   };
-  const onSelected = (e)=>{
-    console.log(e);
-    
-  }
+  const onSelected = (id, isChecked) => {
+    setSubmittedData((prevData) =>
+      prevData.map((item) =>
+        item.id === id ? { ...item, isSelected: isChecked } : item
+      )
+    );
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -49,7 +53,6 @@ function Form() {
       };
 
       setSubmittedData([...submittedData, data]); // Add new data to the array
-      
 
       setFormData({ task: "", hours: "", type: "good" });
     }
@@ -57,7 +60,6 @@ function Form() {
 
   // Filter good and bad tasks from submitted data
   const goodTasks = submittedData.filter((data) => data.type === "good");
-
 
   const badTasks = submittedData.filter((data) => data.type === "bad");
   const totalHours = submittedData.reduce(
@@ -76,7 +78,9 @@ function Form() {
   };
 
   const deleteTask = (index) => {
-    setSubmittedData((prevList) => prevList.filter((item) => item.id !== index));
+    setSubmittedData((prevList) =>
+      prevList.filter((item) => item.id !== index)
+    );
   };
 
   return (
@@ -113,7 +117,7 @@ function Form() {
                       placeholder="Hours"
                       name="hours"
                       value={formData.hours}
-                      onChange={handleInputChange} 
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -121,7 +125,6 @@ function Form() {
                   <div className="m-3">
                     <select
                       name="type"
-                      
                       value={formData.type}
                       onChange={handleInputChange}
                       className="form-control"
@@ -151,7 +154,7 @@ function Form() {
           <DisplayGoodList
             goodList={goodTasks}
             onChangeType={changeTaskType}
-            onSelected = {onSelected}
+            onSelected={onSelected}
             onDeleteType={deleteTask}
           />
 
