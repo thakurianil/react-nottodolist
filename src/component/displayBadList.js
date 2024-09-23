@@ -1,46 +1,61 @@
 // This page is for displaying badlist
-import React from 'react';
+import React from "react";
 import "../App.css";
-function DisplayBadLIst(params) {
-    return(
-        <>
-        <div class="col-md-6 p-3 text-center">
-                    <h3>
-                        <td>
-                            {/* <input type="checkbox" onchange="selectedAll(this)" value="bad" unchecked> */}
-                            </td>
-                        Bad List
-                        <button type="button" class="btn btn-danger" onclick="deleteSelected()" value="bad"><i
-                                class="fa-solid fa-trash "></i></button>
-                        <button type="button" class="btn btn-success" onclick="swapSelected(this)" value="bad"><i
-                                class="fa-solid fa-arrow-left"></i></button>
-                    </h3>
+function DisplayBadLIst({ badList, onChangeType, onDeleteType }) {
+    const totalBadHours = badList.reduce((acc, value) => acc + parseFloat(value.hours), 0);
 
-                    <hr />
-                    <table class="table table-hover">
-                        <tbody id="BadList">
-                            
-                            <tr>
-                                <th scope="row">#</th>
-                                <td>Task1</td>
-                                <td>hours</td>
-                                <td class="text-end">
+  return (
+    <>
+      <div class="col-md-6 p-3 text-center">
+        <h3>
+          <td>
+            {/* <input type="checkbox" onchange="selectedAll(this)" value="bad" unchecked> */}
+          </td>
+          Bad List
+          <button
+            type="button"
+            class="btn btn-danger"
+            // onClick="deleteSelected()"
+            value="bad"
+          >
+            <i class="fa-solid fa-trash "></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            // onClick="swapSelected(this)"
+            value="bad"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </h3>
 
-
-                                    <button type="button" class="btn btn-success"><i
-                                            class="fa-solid fa-arrow-left"></i></button>
-                                    <button type="button" class="btn btn-danger"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="alert alert-danger" role="alert" id="saved">
-                        You could have saved = 0 hours
-                    </div>
-                </div>
-        </>
-    )
+        <hr />
+        <table class="table table-hover">
+          <tbody id="BadList">
+            {badList.map((value, index) => (
+              <tr key={value.id}>
+                <th scope="row">{value.id}</th>
+                <td>{value.task}</td>
+                <td>{value.hours}</td>
+                <td className="text-end">
+                  <button type="button" className="btn btn-danger" onClick={() => onDeleteType(value.id)}>
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                  <button type="button" className="btn btn-success" onClick={() => onChangeType(value.id)}>
+                    <i className="fa-solid fa-arrow-left"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div class="alert alert-danger" role="alert" id="saved">
+          You could have saved = {totalBadHours} hours
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default DisplayBadLIst;

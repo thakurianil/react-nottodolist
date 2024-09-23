@@ -1,13 +1,7 @@
-
-import React, { useState } from 'react';
+import React from "react";
 import Form from "./form";
-import DisplayBadLIst from "./displayBadList";
-import DisplayGoodLIst from "./displayGoodList";
-import CalculateHours from "./calculateHours";
-function Home() {
-  
-  
 
+function Home() {
   return (
     <>
       <div class="container">
@@ -17,18 +11,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <div class="container border border-light rounded-5">
-        <div class="row p-2 ">
-          <Form  />
-        </div>
-      </div>
-      <div class="container mt-4">
-        <div class="row p-1 ">
-          <DisplayGoodLIst />
-          <DisplayBadLIst />
-        </div>
-      </div>
-      <CalculateHours />
+      <Form />
+
     </>
   );
 }

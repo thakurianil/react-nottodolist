@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CalculateHours() {
+function CalculateHours(props) {
   return (
     <div class="container">
       <div class="row">
@@ -9,7 +9,7 @@ function CalculateHours() {
           role="alert"
           id="allocated"
         >
-          The total hours allocated = 0 hours
+          The total hours allocated = {props.totalHours} hours
         </div>
       </div>
     </div>
