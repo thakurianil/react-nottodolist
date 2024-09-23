@@ -6,20 +6,6 @@ import DisplayGoodLIst from "./displayGoodList";
 import CalculateHours from "./calculateHours";
 function Home() {
   
-  const [formData, setFormData] = useState({
-    task: "",
-    hours: "",
-    type:"good"
-  });
-  const [savedTasks, setSavedTasks] = useState([]);
-  const handleFormSubmit = (data) => {
-    
-    if (formData.task && formData.hours) {
-      setSavedTasks([...savedTasks, formData]); // Save data
-      setFormData({ task: '', hours: '' }); // Clear form
-    }
-  };
-  
   
 
   return (
@@ -33,7 +19,7 @@ function Home() {
       </div>
       <div class="container border border-light rounded-5">
         <div class="row p-2 ">
-          <Form handleFormSubmit={handleFormSubmit} formData={formData} />
+          <Form  />
         </div>
       </div>
       <div class="container mt-4">
