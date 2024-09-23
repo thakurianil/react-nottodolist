@@ -33,16 +33,10 @@ function Form() {
       [name]: value,
     });
   };
-  const onSelected = (id, isChecked) => {
-    setSubmittedData((prevData) =>
-      prevData.map((item) =>
-        item.id === id ? { ...item, isSelected: isChecked } : item
-      )
-    );
-  };
+  
 
   const handleFormSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
 
     if (formData.task && formData.hours) {
       const data = {
@@ -52,13 +46,13 @@ function Form() {
         id: generateId(),
       };
 
-      setSubmittedData([...submittedData, data]); // Add new data to the array
+      setSubmittedData([...submittedData, data]); 
 
       setFormData({ task: "", hours: "", type: "good" });
     }
   };
 
-  // Filter good and bad tasks from submitted data
+  
   const goodTasks = submittedData.filter((data) => data.type === "good");
 
   const badTasks = submittedData.filter((data) => data.type === "bad");
@@ -154,7 +148,6 @@ function Form() {
           <DisplayGoodList
             goodList={goodTasks}
             onChangeType={changeTaskType}
-            onSelected={onSelected}
             onDeleteType={deleteTask}
           />
 
