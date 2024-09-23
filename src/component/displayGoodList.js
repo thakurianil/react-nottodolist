@@ -1,6 +1,6 @@
 // This page is for displaying goodlist
 import React from "react";
-function DisplayGoodLIst({ goodList, onChangeType, onDeleteType }) {
+function DisplayGoodLIst({ goodList, onChangeType, onDeleteType, onSelected }) {
   return (
     <>
       <div className="col-md-6 p-3 text-center">
@@ -36,6 +36,15 @@ function DisplayGoodLIst({ goodList, onChangeType, onDeleteType }) {
             {goodList.map((value, index) => (
               <tr key={index}>
                 <th scope="row">{value.id}</th>
+                <td>
+                  <input
+                    type="checkbox"
+                    onChange={(e) => {onSelected()}}
+                    value="entry"
+                    id="checkBox"
+                  />
+                </td>
+
                 <td>{value.task}</td>
                 <td>{value.hours}</td>
                 <td className="text-end">

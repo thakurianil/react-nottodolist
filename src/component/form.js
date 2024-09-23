@@ -32,6 +32,10 @@ function Form() {
       [name]: value,
     });
   };
+  const onSelected = (e)=>{
+    console.log(e);
+    
+  }
 
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -147,6 +151,7 @@ function Form() {
           <DisplayGoodList
             goodList={goodTasks}
             onChangeType={changeTaskType}
+            onSelected = {onSelected}
             onDeleteType={deleteTask}
           />
 
