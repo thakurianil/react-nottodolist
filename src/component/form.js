@@ -3,7 +3,10 @@ import "../App.css";
 import DisplayBadList from "./displayBadList";
 import DisplayGoodList from "./displayGoodList";
 import CalculateHours from "./calculateHours";
+import { newList } from "../redux/Slice.js";
+import { useDispatch } from "react-redux";
 function Form() {
+  const dispatch = useDispatch();
   function generateId() {
     let id = "";
     const string =
@@ -46,8 +49,8 @@ function Form() {
         id: generateId(),
       };
 
-      setSubmittedData([...submittedData, data]); 
-
+      dispatch(newList(formData));
+      
       setFormData({ task: "", hours: "", type: "good" });
     }
   };
